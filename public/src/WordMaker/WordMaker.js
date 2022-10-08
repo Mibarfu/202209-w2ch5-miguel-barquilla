@@ -10,10 +10,6 @@ class WordMaker {
 
     this.randonlife();
   }
-
-  randonlife() {
-    const 
-  }
 }
 
 export default WordMaker;
