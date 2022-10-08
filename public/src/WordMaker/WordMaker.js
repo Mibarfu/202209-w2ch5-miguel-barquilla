@@ -11,7 +11,6 @@ class WordMaker {
     this.matrixWord = Array(rows);
 
     this.createWord(rows, columns);
-    this.randonLife();
   }
 
   createWord(rows, columns) {
