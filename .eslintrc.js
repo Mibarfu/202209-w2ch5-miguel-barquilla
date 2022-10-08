@@ -12,7 +12,7 @@ module.exports = {
   rules: {
     "import/extensions": ["error", "always"],
     "no-plusplus": "off",
-    "lines-beetween-class-members": [
+    "lines-between-class-members": [
       "error",
       "always",
       { exceptAfterSingleLine: true },
