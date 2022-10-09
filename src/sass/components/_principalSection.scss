@@ -1,0 +1,17 @@
+.principal-section {
+  display: flex;
+  padding: 30px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.principal-section__controls {
+  flex: 1;
+}
+
+.principal-section__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20px;
+}
