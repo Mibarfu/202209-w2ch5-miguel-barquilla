@@ -1,5 +1,6 @@
 import WordMaker from "./WordMaker/WordMaker.js";
 import BuilderGrid from "./BuiderGrid/BuilderGrid.js";
+import nextGeneration from "./nextGeneration/nextGeneration.js";
 
 const rows = 100;
 const columns = 100;
