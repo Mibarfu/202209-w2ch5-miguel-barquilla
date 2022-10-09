@@ -1,11 +1,11 @@
 class WordMaker {
-  matrixWord = [];
+  matrixWord;
   rows;
   columns;
-  rangeRandomNumbers = 1000;
+  rangeRandomNumbers = 100;
   probabilityLeaving = 20;
 
-  constructor(columns, rows) {
+  constructor(rows, columns) {
     this.columns = columns;
     this.rows = rows;
     this.matrixWord = Array(rows);
@@ -14,8 +14,8 @@ class WordMaker {
   }
 
   createWord(rows, columns) {
-    for (let i = 0; i < rows; i++) {
-      this.matrixWord[i] = Array(columns);
+    for (let row = 0; row < rows; row++) {
+      this.matrixWord[row] = Array(columns);
     }
   }
 
