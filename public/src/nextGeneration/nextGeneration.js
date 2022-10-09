@@ -20,7 +20,7 @@ const findNeighbors = (row, column, currentGenerationArray) => {
 };
 
 const newStateCell = (currentCell, neighBors) => {
-  let newState;
+  let newState = currentCell;
 
   if (currentCell === true && neighBors < 2) newState = false;
   if (currentCell === true && neighBors > 3) newState = false;

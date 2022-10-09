@@ -20,10 +20,10 @@ class BuilderGrid {
 
     this.element.width = this.columns * this.size;
     this.element.height = this.rows * this.size;
-
     for (let row = 0; row < this.rows; row++) {
       for (let column = 0; column < this.columns; column++) {
         contextGrid.fillStyle = array[row][column] ? "black" : "white";
+
         contextGrid.fillRect(
           row * (this.size + 1),
           column * (this.size + 1),
