@@ -1,1 +1,13 @@
-@use "components/grid.scss";
+@use "core/reset";
+@use "variables/colors";
+@use "components/principalSection";
+@use "components/grid";
+@use "components/buttons";
+@use "components/footer";
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: colors.$color-background-principal;
+}

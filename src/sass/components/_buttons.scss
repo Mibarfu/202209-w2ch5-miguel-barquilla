@@ -1,0 +1,17 @@
+@use "../variables/colors";
+
+.button-control {
+  border: none;
+  color: colors.$color-text-buttons;
+  background-color: colors.$color-background-buttons;
+  border-radius: 7px;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(80%);
+  }
+  &__icon {
+    color: colors.$color-icon-button;
+  }
+}
