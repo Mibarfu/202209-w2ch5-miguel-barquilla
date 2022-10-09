@@ -1,15 +1,17 @@
+@use "../variables/colors";
 .grid {
   display: flex;
   position: relative;
-  border: 1px solid black;
+  border: 3px solid rgba(0, 0, 0, 0.1);
   width: fit-content;
   margin: 5% auto;
   justify-content: center;
   align-items: center;
-}
-h1 {
-  position: absolute;
-  font-size: 11rem;
-  color: rgba(130, 154, 155, 0.15);
-  font-family: "Comforter Brush", cursive;
+
+  h2 {
+    position: absolute;
+    font-size: 11rem;
+    color: colors.$color-h2-grid;
+    font-family: "Comforter Brush", cursive;
+  }
 }
