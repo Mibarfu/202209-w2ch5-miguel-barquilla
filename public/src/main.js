@@ -10,12 +10,10 @@ const rows = 150;
 const sizCell = 3;
 
 const gridElement = document.querySelector(".grid-canvas");
+
 const word = new WordMaker(rows, columns);
-
 word.randonLife();
-
 const grid = new BuilderGrid(rows, columns, sizCell, gridElement);
-
 grid.buildGrid(word.matrixWord);
 
 declareEventsRestartButton(word, grid);

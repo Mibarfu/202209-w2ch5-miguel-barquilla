@@ -9,30 +9,33 @@ export const declareEventsRestartButton = (word, grid) => {
   });
 };
 
-export const declareEventsPlayButton = (rows, columns, word, grid) => {
+export const declareEventsPlayButton = (rows, columns, wordArray, grid) => {
+  let isInterval = false;
+  let timerId;
+
   document.querySelector(".play-button").addEventListener("click", () => {
-    setInterval(() => {
-      const word2 = word;
-      const nextGenerationArray = nextGeneration(
-        rows,
-        columns,
-        word.matrixWord
-      );
-      grid.buildGrid(nextGenerationArray);
-      word2.matrixWord = nextToCurrentGeneration(
-        rows,
-        columns,
-        nextGenerationArray
-      );
-    }, 100);
+    if (!isInterval) {
+      timerId = setInterval(() => {
+        const word = wordArray;
+        isInterval = true;
+
+        const nextGenerationArray = nextGeneration(
+          rows,
+          columns,
+          word.matrixWord
+        );
+
+        grid.buildGrid(nextGenerationArray);
+        word.matrixWord = nextToCurrentGeneration(
+          rows,
+          columns,
+          nextGenerationArray
+        );
+      }, 100);
+    }
+    document.querySelector(".stop-button").addEventListener("click", () => {
+      clearInterval(timerId);
+      isInterval = false;
+    });
   });
 };
-
-// export const declareEventsStopButton = (word, grid) => {
-//   document.querySelector(".restart-button").addEventListener("click", () => {
-//     word.randonLife();
-
-//     grid.buildGrid(word.matrixWord);
-//   });
-// };
-// declareEventsRestartButton;
