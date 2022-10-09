@@ -2,3 +2,10 @@
 @use "components/principalSection";
 @use "components/grid";
 @use "components/buttons";
+@use "components/_footer";
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

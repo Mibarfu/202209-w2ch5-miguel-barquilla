@@ -1,0 +1,10 @@
+@use "../variables/colors";
+
+footer {
+  background-color: colors.$color-background-footer;
+  height: 50px;
+  font-family: "Roboto", sans-serif;
+  color: colors.$color-text-footer;
+  text-align: center;
+  line-height: 50px;
+}
