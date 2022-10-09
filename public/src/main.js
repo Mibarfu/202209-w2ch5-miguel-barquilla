@@ -3,8 +3,8 @@ import BuilderGrid from "./BuiderGrid/BuilderGrid.js";
 import nextGeneration from "./nextGeneration/nextGeneration.js";
 import nextToCurrentGeneration from "./nextToCurrentGeneration/nextToCurrentGeneration.js";
 
-const rows = 100;
-const columns = 100;
+const columns = 300;
+const rows = 150;
 const sizCell = 3;
 
 const gridElement = document.querySelector(".grid-canvas");
