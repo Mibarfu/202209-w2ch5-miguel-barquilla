@@ -5,19 +5,17 @@ class BuilderGrid {
   size;
   columns;
   element;
-  array;
 
-  constructor(rows, columns, size, element, array) {
+  constructor(rows, columns, size, element) {
     this.rows = rows;
     this.columns = columns;
     this.width = columns * this.size;
     this.heigth = rows * this.size;
     this.element = element;
-    this.array = array;
     this.size = size;
   }
 
-  buildGrid() {
+  buildGrid(array) {
     const contextGrid = this.element.getContext("2d");
 
     this.element.width = this.columns * this.size;
@@ -25,7 +23,7 @@ class BuilderGrid {
 
     for (let row = 0; row < this.rows; row++) {
       for (let column = 0; column < this.columns; column++) {
-        contextGrid.fillStyle = this.array[row][column] ? "black" : "white";
+        contextGrid.fillStyle = array[row][column] ? "black" : "white";
         contextGrid.fillRect(
           row * (this.size + 1),
           column * (this.size + 1),

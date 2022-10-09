@@ -1,14 +1,20 @@
-const findNeighbors = (row, colummn, currentGenerationArray) => {
+const findNeighbors = (row, column, currentGenerationArray) => {
   let neighBors = 0;
-
-  if (currentGenerationArray[row - 1][colummn - 1]) neighBors++;
-  if (currentGenerationArray[row - 1][colummn]) neighBors++;
-  if (currentGenerationArray[row - 1][colummn + 1]) neighBors++;
-  if (currentGenerationArray[row][colummn - 1]) neighBors++;
-  if (currentGenerationArray[row][colummn + 1]) neighBors++;
-  if (currentGenerationArray[row + 1][colummn - 1]) neighBors++;
-  if (currentGenerationArray[row + 1][colummn]) neighBors++;
-  if (currentGenerationArray[row + 1][colummn + 1]) neighBors++;
+  if (
+    row > 0 &&
+    row < currentGenerationArray.length - 1 &&
+    column > 0 &&
+    column < currentGenerationArray[row].length - 1
+  ) {
+    if (currentGenerationArray[row - 1][column - 1]) neighBors++;
+    if (currentGenerationArray[row - 1][column]) neighBors++;
+    if (currentGenerationArray[row - 1][column + 1]) neighBors++;
+    if (currentGenerationArray[row][column - 1]) neighBors++;
+    if (currentGenerationArray[row][column + 1]) neighBors++;
+    if (currentGenerationArray[row + 1][column - 1]) neighBors++;
+    if (currentGenerationArray[row + 1][column]) neighBors++;
+    if (currentGenerationArray[row + 1][column + 1]) neighBors++;
+  }
 
   return neighBors;
 };
@@ -30,8 +36,8 @@ const nextGeneration = (rows, columns, currentGenerationArray) => {
     nextGenerationArray[i] = Array(columns);
   }
 
-  for (let row; row < rows; row++) {
-    for (let column; column < columns; column++) {
+  for (let row = 0; row < rows; row++) {
+    for (let column = 0; column < columns; column++) {
       nextGenerationArray[row][column] = newStateCell(
         currentGenerationArray[row][column],
         findNeighbors(row, column, currentGenerationArray)

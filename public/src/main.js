@@ -11,12 +11,11 @@ const word = new WordMaker(rows, columns);
 
 word.randonLife();
 
-const grid = new BuilderGrid(
-  rows,
-  columns,
-  sizCell,
-  gridElement,
-  word.matrixWord
-);
+const grid = new BuilderGrid(rows, columns, sizCell, gridElement);
 
-grid.buildGrid();
+setInterval(() => {
+  const nextGenerationArray = nextGeneration(rows, columns, word.matrixWord);
+
+  grid.buildGrid(nextGenerationArray);
+  console.log("Frame");
+}, 500);
